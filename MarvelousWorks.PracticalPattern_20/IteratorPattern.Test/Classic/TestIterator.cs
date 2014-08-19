@@ -1,21 +1,21 @@
 using System;
-using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MarvellousWorks.PracticalPattern.IteratorPattern.Classic;
+using NUnit.Framework;
+
 namespace MarvellousWorks.PracticalPattern.IteratorPattern.Test.Classic
 {
-    [TestClass]
+    [TestFixture]
     public class TestIterator
     {
-        [TestMethod]
+        [Test]
         public void Test()
         {
             IAggregate target = new Aggregate();
             target.Add("A");
             target.Add("B");
             IIterator iterator = target.CreaetIterator();
-            Assert.AreEqual<string>("A", iterator.Next());
-            Assert.AreEqual<string>("B", iterator.Next());
+            Assert.AreEqual("A", iterator.Next());
+            Assert.AreEqual("B", iterator.Next());
             try
             {
                 iterator.Next();
